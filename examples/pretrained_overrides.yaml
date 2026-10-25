@@ -1,0 +1,24 @@
+search:
+  engines: [rasr, flash_ansr, pisr]
+  seeds: [42, 43, 44]
+  max_wall_seconds: 1200
+  max_export_candidates: 200
+  engine_options:
+    rasr:
+      num_candidates: 1024
+      decode_batch_size: 16
+      n_restarts: 4
+      refiner_workers: 2
+    flash_ansr:
+      draws: 1024
+      workers: 2
+    pisr: {}  # native optionsは配布source確認後に宣言
+model_assets:
+  rasr:
+    manifest_file: assets/rasr_manifest.json
+  flash_ansr:
+    manifest_file: assets/flash_ansr_manifest.json
+  pisr:
+    manifest_file: assets/pisr_manifest.json
+evaluation:
+  coefficient_fit: none

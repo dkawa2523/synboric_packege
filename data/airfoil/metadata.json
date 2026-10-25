@@ -1,0 +1,56 @@
+{
+  "dataset": "airfoil",
+  "uci_id": 291,
+  "doi": "10.24432/C5VW2C",
+  "license": "CC-BY-4.0",
+  "source_url": "https://archive.ics.uci.edu/static/public/291/airfoil+self+noise.zip",
+  "source_sha256": "5c7767ba53ad827d3f48ba1eb9434117f4892df8f10bc4c99e118a9e8a7ae07c",
+  "table_sha256": "c800c8732ce791ae194f81d7e4db53c3210a20d7c8089c574ebd013923ac1d91",
+  "split_sha256": "c865f5266fc51aa6c7a128e7c363fe5bb68e3aa8b4c5ab29b60b2bc755cbba5a",
+  "seed": 42,
+  "target": "sound_level",
+  "features": [
+    "frequency",
+    "attack_angle",
+    "chord",
+    "velocity",
+    "displacement_thickness"
+  ],
+  "units": {
+    "frequency": "Hz",
+    "attack_angle": "deg",
+    "chord": "m",
+    "velocity": "m/s",
+    "displacement_thickness": "m",
+    "sound_level": "dB"
+  },
+  "group_features": [
+    "attack_angle",
+    "chord",
+    "velocity",
+    "displacement_thickness"
+  ],
+  "group_definition": "Derived exact feature tuple; not an original experiment identifier",
+  "rows": 1503,
+  "groups": 106,
+  "exact_duplicate_rows": 0,
+  "split_rule": "Group shuffle seed; ceil(0.2*G) final, ceil(0.2*remaining_G) selection",
+  "partitions": {
+    "train": {
+      "n_rows": 937,
+      "n_groups": 67,
+      "mean_predictor_rmse": 7.089683836299275
+    },
+    "selection": {
+      "n_rows": 246,
+      "n_groups": 17,
+      "mean_predictor_rmse": 7.0443499256778015
+    },
+    "final": {
+      "n_rows": 320,
+      "n_groups": 22
+    }
+  },
+  "truth_formula": null,
+  "pretraining_overlap": "unknown; public dataset is not guaranteed unseen"
+}

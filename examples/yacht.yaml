@@ -1,0 +1,37 @@
+task: symbolic_pipeline
+data:
+  local_path: data/yacht/table.csv
+  target_column: resistance
+  feature_columns: [buoyancy_position, prismatic_coefficient, length_displacement_ratio, beam_draught_ratio, length_beam_ratio, froude]
+  id_columns: [sample_id]
+  units:
+    buoyancy_position: "1"
+    prismatic_coefficient: "1"
+    length_displacement_ratio: "1"
+    beam_draught_ratio: "1"
+    length_beam_ratio: "1"
+    froude: "1"
+    resistance: "1"
+split:
+  method: fixed
+  file: data/yacht/split.csv
+  group_column: group_id
+search:
+  engines: [pysr, physo]
+  operators: [add, sub, mul, div]
+  seeds: [42]
+  max_wall_seconds: 300
+  max_export_candidates: 100
+  allow_partial_engines: false
+  engine_options:
+    pysr: {}
+    physo: {}
+constraints:
+  max_nodes: 30
+  require_units: false
+evaluation:
+  mode: holdout
+  coefficient_fit: none
+  selection_policy: balanced
+  relative_tolerance: 0.05
+  absolute_tolerance: 0.0

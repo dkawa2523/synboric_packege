@@ -1,0 +1,65 @@
+{
+  "dataset": "concrete",
+  "uci_id": 165,
+  "doi": "10.24432/C5PK67",
+  "license": "CC-BY-4.0",
+  "source_url": "https://archive.ics.uci.edu/static/public/165/concrete+compressive+strength.zip",
+  "source_sha256": "dad85d14de8aee4e07479daa774e6b569a313715b71a3b92c95a07cf91c2c9a7",
+  "table_sha256": "55d74fdf8ec3d9e818f5a1c598f68aa89d7d3ef124449957ad3ccb411a11bc3e",
+  "split_sha256": "b5d24802cb305de0bd2f8d89c60ff82b283a199637489485a9c5fc39df88ed00",
+  "seed": 42,
+  "target": "strength",
+  "features": [
+    "cement",
+    "slag",
+    "fly_ash",
+    "water",
+    "superplasticizer",
+    "coarse_aggregate",
+    "fine_aggregate",
+    "age"
+  ],
+  "units": {
+    "cement": "kg/m^3",
+    "slag": "kg/m^3",
+    "fly_ash": "kg/m^3",
+    "water": "kg/m^3",
+    "superplasticizer": "kg/m^3",
+    "coarse_aggregate": "kg/m^3",
+    "fine_aggregate": "kg/m^3",
+    "age": "day",
+    "strength": "MPa"
+  },
+  "group_features": [
+    "cement",
+    "slag",
+    "fly_ash",
+    "water",
+    "superplasticizer",
+    "coarse_aggregate",
+    "fine_aggregate"
+  ],
+  "group_definition": "Derived exact feature tuple; not an original experiment identifier",
+  "rows": 1030,
+  "groups": 428,
+  "exact_duplicate_rows": 25,
+  "split_rule": "Group shuffle seed; ceil(0.2*G) final, ceil(0.2*remaining_G) selection",
+  "partitions": {
+    "train": {
+      "n_rows": 652,
+      "n_groups": 273,
+      "mean_predictor_rmse": 17.036319749048822
+    },
+    "selection": {
+      "n_rows": 149,
+      "n_groups": 69,
+      "mean_predictor_rmse": 14.891400934021632
+    },
+    "final": {
+      "n_rows": 229,
+      "n_groups": 86
+    }
+  },
+  "truth_formula": null,
+  "pretraining_overlap": "unknown; public dataset is not guaranteed unseen"
+}

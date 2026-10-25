@@ -1,0 +1,59 @@
+{
+  "dataset": "yacht",
+  "uci_id": 243,
+  "doi": "10.24432/C5XG7R",
+  "license": "CC-BY-4.0",
+  "source_url": "https://archive.ics.uci.edu/static/public/243/yacht+hydrodynamics.zip",
+  "source_sha256": "aa52b68f88c4bb552187a53ef4c5753fa178f6a36035a3771c5bc04e078487ac",
+  "table_sha256": "c9673f671e64621b897e729ed320ab83dbbe527b6d7192776047d7316da65cc6",
+  "split_sha256": "fe3a89124ec989e25d2e24e857e72c1a5a08d27f36de99ef5f78086cfc729de2",
+  "seed": 42,
+  "target": "resistance",
+  "features": [
+    "buoyancy_position",
+    "prismatic_coefficient",
+    "length_displacement_ratio",
+    "beam_draught_ratio",
+    "length_beam_ratio",
+    "froude"
+  ],
+  "units": {
+    "buoyancy_position": "1",
+    "prismatic_coefficient": "1",
+    "length_displacement_ratio": "1",
+    "beam_draught_ratio": "1",
+    "length_beam_ratio": "1",
+    "froude": "1",
+    "resistance": "1"
+  },
+  "group_features": [
+    "buoyancy_position",
+    "prismatic_coefficient",
+    "length_displacement_ratio",
+    "beam_draught_ratio",
+    "length_beam_ratio"
+  ],
+  "group_definition": "Derived exact feature tuple; not an original experiment identifier",
+  "rows": 308,
+  "groups": 22,
+  "exact_duplicate_rows": 0,
+  "split_rule": "Group shuffle seed; ceil(0.2*G) final, ceil(0.2*remaining_G) selection",
+  "partitions": {
+    "train": {
+      "n_rows": 182,
+      "n_groups": 13,
+      "mean_predictor_rmse": 15.230497074400338
+    },
+    "selection": {
+      "n_rows": 56,
+      "n_groups": 4,
+      "mean_predictor_rmse": 15.94315122533313
+    },
+    "final": {
+      "n_rows": 70,
+      "n_groups": 5
+    }
+  },
+  "truth_formula": null,
+  "pretraining_overlap": "unknown; public dataset is not guaranteed unseen"
+}
